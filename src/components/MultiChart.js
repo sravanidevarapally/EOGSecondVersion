@@ -66,12 +66,12 @@ export default function MultiChart() {
   };
 
   const colors = {
-    flareTemp: '#FF7801',
-    injValveOpen: '#08B50E',
-    oilTemp: '#000000',
-    casingPressure: '#8440C1',
-    tubingPressure: '#2900FF',
-    waterTemp: '#D60303',
+    flareTemp: '#df3e12',
+    injValveOpen: '#2c0412',
+    oilTemp: '#11cdcc',
+    casingPressure: '#b3d511',
+    tubingPressure: '#c228ee',
+    waterTemp: '#1611d5',
     default: '#00FFE0',
   };
 
