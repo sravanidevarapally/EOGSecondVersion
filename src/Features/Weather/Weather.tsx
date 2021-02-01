@@ -22,9 +22,11 @@ query($latLong: WeatherQuery!) {
 `;
 
 const getWeather = (state: IState) => {
-  const { temperatureinFahrenheit, description, locationName } = state.weather;
+  //const { temperatureinFahrenheit, description, locationName } = state.weather;
+  const {temperatureinCelsius, description, locationName} = state.weather;
   return {
-    temperatureinFahrenheit,
+    //temperatureinFahrenheit,
+    temperatureinCelsius,
     description,
     locationName,
   };
@@ -46,7 +48,8 @@ const Weather = () => {
     longitude: getLocation.longitude || -95.3698,
   };
   const dispatch = useDispatch();
-  const { temperatureinFahrenheit, description, locationName } = useSelector(getWeather);
+  //const { temperatureinFahrenheit, description, locationName } = useSelector(getWeather);
+  const {temperatureinCelsius, description, locationName} = useSelector(getWeather);
 
   const [result] = useQuery({
     query,
@@ -67,5 +70,5 @@ const Weather = () => {
 
   if (fetching) return <LinearProgress />;
 
-  return <Chip label={`Weather in ${locationName}: ${description} and ${temperatureinFahrenheit}°`} />;
+  return <Chip label={`Weather currently in ${locationName}: ${description} and ${temperatureinCelsius}° Centigrades`} />;
 };
